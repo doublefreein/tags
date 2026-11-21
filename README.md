@@ -1,7 +1,7 @@
-# Doublefree Tags: public passports
+# Doublefree Tags
 
 The public record behind every Doublefree tag. Each handmade piece carries a
-tag whose QR code opens `doublefree.in/p/<ID>`, served from this repository.
+tag whose QR code opens `doublefree.in/tags/<ID>`, served from this repository.
 
 | Path | What it holds |
 |---|---|
@@ -9,7 +9,7 @@ tag whose QR code opens `doublefree.in/p/<ID>`, served from this repository.
 | `passports/<ID>/passport.json` | Summary and the latest (head) hash |
 | `media/<sha256>.jpg` | Photos, 1024 px, metadata stripped, named by their SHA-256 |
 | `thumbs/<sha256>.jpg` | 720 px display copies of the same photos |
-| `p/<ID>/index.html` | The passport page a buyer sees |
+| `<ID>/index.html` | The passport page a buyer sees, at `doublefree.in/tags/<ID>` |
 
 This repository holds **no personal contact data**: no phone numbers,
 addresses, UPI IDs or ages. Makers appear by first name and district only,
@@ -30,4 +30,4 @@ to the one they replace.
 
 ## Passports
 
-- [DF-CRO-26-0001](p/DF-CRO-26-0001/): striped crochet cardigan, Pune (sample)
+- [DF-CRO-26-0001](DF-CRO-26-0001/): striped crochet cardigan, Pune (sample)

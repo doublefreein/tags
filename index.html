@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Doublefree Passports</title>
+<title>Doublefree Tags</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Inter:wght@400;600&display=swap">
 <style>
 :root{--bg:#FAF8F4;--fg:#1E1C19;--muted:#5E5A54;--line:#E6E1D8;--accent:#2E4A7D;--surface:#FFFFFF}
@@ -22,16 +22,16 @@ a.card span{color:var(--muted);font-size:13px}
 </head>
 <body>
 <main>
-  <h1>Doublefree passports</h1>
+  <h1>Doublefree Tags</h1>
   <p>Type the ID printed on a tag to see who made the piece, from what, and what they were paid.</p>
   <form id="f"><label for="id" hidden>Passport ID</label><input id="id" placeholder="DF-CRO-26-0001" autocomplete="off"><button>Open</button></form>
-  <a class="card" href="p/DF-CRO-26-0001/"><b>DF-CRO-26-0001</b><span>Striped crochet cardigan · Pune · sample</span></a>
+  <a class="card" href="DF-CRO-26-0001/"><b>DF-CRO-26-0001</b><span>Striped crochet cardigan · Pune · sample</span></a>
 </main>
 <script>
 document.getElementById("f").addEventListener("submit", e => {
   e.preventDefault();
   const id = document.getElementById("id").value.trim().toUpperCase();
-  if (/^DF-[A-Z]{3}-\d{2}-\d{4}$/.test(id)) location.href = "p/" + id + "/";
+  if (/^DF-[A-Z]{3}-\d{2}-\d{4}$/.test(id)) location.href = id + "/";
 });
 </script>
 </body>
