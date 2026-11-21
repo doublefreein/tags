@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0011",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-19T10:35:00+05:30",
+  "submitted_by": "P-0001",
+  "channel": "whatsapp",
+  "payload": {
+    "stage": "finish",
+    "seq": 8,
+    "title": "Cuffs finished",
+    "detail": "Navy trim and scallops added to both cuffs.",
+    "media": [
+      "0ecc9aca44aec20a5425ebe683b4f8eddb9f09baba2499e0472650e58516fc83"
+    ],
+    "maker": "P-0001",
+    "taken": "between 9 and 19 Nov 2026 (exact date not recorded)",
+    "checks": {
+      "V1_one_time_code": "absent: photo taken before a code was issued",
+      "V2_reuse": "not run",
+      "V3_ai": "not run",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "a00b8dc0f45af78f448c2cd7c278646b9007b94ff4d399715bf3ffffbaffd742"
+}

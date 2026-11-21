@@ -1,0 +1,20 @@
+{
+  "event_id": "DF-CRO-26-0001/0001",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "passport",
+  "timestamp": "2026-11-09T09:00:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "craft_template": "crochet",
+    "product_name": "Striped open-front cardigan",
+    "batch_size": 1,
+    "retail_price": null,
+    "for_sale": false,
+    "merchant": null,
+    "cluster": "Pune, Maharashtra",
+    "note": "Sample passport: made by the maker for herself, not sold."
+  },
+  "supersedes": null,
+  "prev_hash": null
+}

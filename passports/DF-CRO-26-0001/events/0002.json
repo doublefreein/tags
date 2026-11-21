@@ -1,0 +1,20 @@
+{
+  "event_id": "DF-CRO-26-0001/0002",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "material",
+  "timestamp": "2026-11-11T00:00:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "item": "ProKart Micro Shine acrylic yarn, 200 g combo (2 × 100 g), cream + navy",
+    "qty": 2,
+    "fibre": "acrylic",
+    "grams": 400,
+    "amount_inr": 538.0,
+    "tax_inr": 25.6,
+    "source": "Amazon.in (seller: Etrade Marketing Pvt Ltd, ships from Mumbai)",
+    "receipt": "invoice held in private store"
+  },
+  "supersedes": null,
+  "prev_hash": "bfc3a36add0bec47a3669e1b1004c1f90d220ccf9957800e3a05c68021bf8453"
+}

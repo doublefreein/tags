@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0004",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-19T10:35:00+05:30",
+  "submitted_by": "P-0001",
+  "channel": "whatsapp",
+  "payload": {
+    "stage": "back",
+    "seq": 1,
+    "title": "Back panel",
+    "detail": "Back panel crocheted in double crochet, navy and cream stripes.",
+    "media": [
+      "ee511bdbc7ca33e61f3f0b5f67c2c47d0ffc37460ed8ba6aa4e15be9b81fcdfc"
+    ],
+    "maker": "P-0001",
+    "taken": "between 9 and 19 Nov 2026 (exact date not recorded)",
+    "checks": {
+      "V1_one_time_code": "absent: photo taken before a code was issued",
+      "V2_reuse": "not run",
+      "V3_ai": "not run",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "4aa1474e99162275d23eff91049d3c4dbe0c1681e52413e050a659fcd7ce4861"
+}

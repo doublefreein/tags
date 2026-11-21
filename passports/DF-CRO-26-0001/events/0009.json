@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0009",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-19T10:35:00+05:30",
+  "submitted_by": "P-0001",
+  "channel": "whatsapp",
+  "payload": {
+    "stage": "sleeves",
+    "seq": 6,
+    "title": "First sleeve",
+    "detail": "First sleeve worked and attached.",
+    "media": [
+      "e6620af5990efa56ba219f42f97dfed021a822c16b240cbf6bab27329ac16842"
+    ],
+    "maker": "P-0001",
+    "taken": "between 9 and 19 Nov 2026 (exact date not recorded)",
+    "checks": {
+      "V1_one_time_code": "absent: photo taken before a code was issued",
+      "V2_reuse": "not run",
+      "V3_ai": "not run",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "c7dd05aeec676f5020575dffc9d72b54698dca185f7ccf0282c039b3238b8d99"
+}

@@ -1,0 +1,19 @@
+{
+  "event_id": "DF-CRO-26-0001/0015",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "material",
+  "timestamp": "2026-11-21T13:45:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "refers_to": "DF-CRO-26-0001/0003",
+    "note": "Only the navy ball from this pack was used. The 100 g black ball is left over and not part of the cardigan.",
+    "unused": {
+      "colour": "black",
+      "grams": 100,
+      "approx_value_inr": 134.5
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "4c6002fe6c1d6be7abe9c15ec2ca2da494d974bf4881085d32206b11b0c31ed8"
+}

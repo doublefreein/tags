@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rujula's Striped Cardigan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one phone-first column (the passport page a buyer opens from the tag), centred on wide screens. Tokens follow design/Main.dc.html. */
+:root{
+  --bg:#FAF8F4; --surface:#FFFFFF; --sunk:#F1EDE5; --fg:#1E1C19; --muted:#5E5A54; --line:#E6E1D8;
+  --accent:#2E4A7D; --accent-soft:#E8EEF8; --pending:#8A5A12; --pending-soft:#FBF0DC;
+  --banner-bg:#1E1C19; --banner-fg:#FAF8F4;
+  --navy:#22305C; --cream:#EFE6CF;
+  --display:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;
+  --body:Inter,ui-sans-serif,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#16171A; --surface:#1F2024; --sunk:#26272C; --fg:#ECE8E1; --muted:#A39E95; --line:#34353B;
+  --accent:#9DB5E3; --accent-soft:#232D42; --pending:#E8B867; --pending-soft:#3A2E1A;
+  --banner-bg:#ECE8E1; --banner-fg:#16171A; --navy:#3A4F8F; --cream:#D9CFB6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16171A; --surface:#1F2024; --sunk:#26272C; --fg:#ECE8E1; --muted:#A39E95; --line:#34353B;
+  --accent:#9DB5E3; --accent-soft:#232D42; --pending:#E8B867; --pending-soft:#3A2E1A;
+  --banner-bg:#ECE8E1; --banner-fg:#16171A; --navy:#3A4F8F; --cream:#D9CFB6; color-scheme:dark}
+
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+.page{max-width:560px;margin:0 auto}
+.pad{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--display);font-weight:700;text-wrap:balance;margin:0}
+h1{font-size:31px;line-height:1.12}
+h2{font-size:21px;line-height:1.2}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.mono{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+.banner{background:var(--banner-bg);color:var(--banner-fg);font-size:12px;font-weight:600;letter-spacing:.05em;text-align:center;padding-block:8px}
+header{display:flex;align-items:center;gap:10px;padding-block:14px;border-bottom:1px solid var(--line)}
+header .brand{display:flex;flex-direction:column;line-height:1.2}
+header .brand b{font-family:var(--display);font-size:17px}
+section{display:flex;flex-direction:column;gap:14px;padding-block:26px}
+section + section{border-top:1px solid var(--line)}
+
+.hero{padding-top:20px}
+.hero img{width:100%;max-width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;display:block;background:var(--sunk)}
+.herofig{position:relative;margin:0}
+.badge{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:6px;background:rgba(20,20,22,.78);color:#F4F1EA;font-size:12.5px;font-weight:500;padding:6px 10px;border-radius:999px;max-width:calc(100% - 20px)}
+.badge a{color:#F4F1EA}
+#unedited{scroll-margin-top:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+.chip.pending{background:var(--pending-soft);color:var(--pending)}
+.chip.info{background:var(--accent-soft);color:var(--accent)}
+.chip svg{flex-shrink:0}
+
+.maker{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.avatar{width:56px;height:56px;flex-shrink:0;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font:700 20px var(--display);color:var(--muted)}
+.maker .who{display:flex;flex-direction:column;flex:1;min-width:0}
+.maker .who b{font-size:16px}
+.maker .pay{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.maker .pay b{font-size:15px}
+.status-ok{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:var(--accent);margin-top:3px}
+
+.ledger{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:12px 16px;align-items:baseline}
+.row + .row{border-top:1px solid var(--line)}
+.row .amt{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.row .sub{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.row.total{background:var(--sunk)}
+.row.total span:first-child{font-weight:600}
+.yarnbar{display:flex;height:14px;border-radius:7px;overflow:hidden;gap:2px}
+.yarnbar span{display:block}
+
+.journey{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:22px 1fr;gap:0 14px}
+.rail{display:flex;flex-direction:column;align-items:center}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-top:6px;flex-shrink:0}
+.dot.hollow{background:var(--bg);border:2px solid var(--accent)}
+.line{width:2px;flex:1;background:var(--line);margin-block:4px}
+.step:last-child .line{display:none}
+.step .body{display:flex;flex-direction:column;gap:4px;padding-bottom:26px;min-width:0}
+.step .when{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.step .title{font-weight:600;font-size:16px}
+.step img{width:100%;max-width:100%;border-radius:10px;margin-top:8px;display:block;background:var(--sunk);cursor:zoom-in}
+.step .check{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);margin-top:6px}
+.check.edited{color:var(--pending);font-weight:500}
+.note{background:var(--sunk);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--muted)}
+
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0}
+dl.facts dt{color:var(--muted);font-size:14px}
+dl.facts dd{margin:0;font-weight:500;min-width:0}
+
+.integrity{background:var(--surface)}
+.hash{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+summary{cursor:pointer;padding:12px 14px;font-weight:600;color:var(--accent);min-height:24px}
+.log{overflow-x:auto;padding:0 14px 12px}
+.log table{border-collapse:collapse;width:100%;min-width:420px}
+.log td,.log th{padding:6px 8px 6px 0;text-align:left;font-size:13px;border-top:1px solid var(--line);vertical-align:top}
+.log th{font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.03em}
+
+footer{display:flex;flex-direction:column;gap:10px;padding-block:24px 40px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+footer .mark{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--fg)}
+
+dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:92vh}
+dialog::backdrop{background:rgba(0,0,0,.82)}
+dialog img{max-width:96vw;max-height:88vh;display:block;border-radius:8px}
+dialog button{margin-top:10px;width:100%;min-height:44px;border:0;border-radius:10px;background:var(--surface);color:var(--fg);font:600 14px var(--body);cursor:pointer}
+@media (prefers-reduced-motion: no-preference){.step img{transition:opacity .15s}.step img:hover{opacity:.92}}
+</style>
+</head>
+<body>
+
+<div class="banner pad">SAMPLE PASSPORT · A REAL PIECE, MADE FOR HERSELF, NOT FOR SALE</div>
+<div class="page">
+
+<header class="pad">
+  <svg width="36" height="36" viewBox="0 0 216 214" role="img" aria-label="Doublefree logo"><rect x="8" y="8" width="200" height="198" fill="#FFFFFF" stroke="#000000" stroke-width="5"/><polygon points="108,72 40,174 176,174" fill="none" stroke="#0000FF" stroke-width="7"/><polygon points="108,40 38,140 178,140" fill="none" stroke="#FF9933" stroke-width="7"/></svg>
+  <div class="brand"><b>Doublefree</b><span class="small muted">Product passport</span></div>
+</header>
+
+<section class="hero pad">
+  <figure class="herofig">
+    <img src="../../thumbs/76461b794c0bf0586b3dfb00272904a2615e629bfd6125d8ec5b894bef848be6.jpg" srcset="../../thumbs/76461b794c0bf0586b3dfb00272904a2615e629bfd6125d8ec5b894bef848be6.jpg 720w, ../../media/76461b794c0bf0586b3dfb00272904a2615e629bfd6125d8ec5b894bef848be6.jpg 1024w" sizes="(max-width: 560px) 100vw, 520px" data-full="../../media/76461b794c0bf0586b3dfb00272904a2615e629bfd6125d8ec5b894bef848be6.jpg" alt="Finished navy and cream striped crochet cardigan on a wooden hanger against a wood-panelled wall" data-zoom>
+    <figcaption class="badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Background edited · <a href="#unedited">see unedited photo</a></figcaption>
+  </figure>
+  <div class="chips">
+    <span class="chip info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg>Confirmed by the maker</span>
+    <span class="chip info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg>Photos reviewed by steward</span>
+  </div>
+  <h1>Striped open-front cardigan</h1>
+  <p class="muted">Crochet · Pune, Maharashtra · Finished 20 Nov 2026</p>
+  <p class="small muted">Tag <span class="mono">DF-CRO-26-0001</span> · doublefree.in/p/DF-CRO-26-0001</p>
+</section>
+
+<section class="pad">
+  <h2>Made by</h2>
+  <p class="muted">One person made the whole piece, from the first row to the cuff trim.</p>
+  <div class="maker">
+    <div class="avatar" aria-hidden="true">R</div>
+    <div class="who">
+      <b>Rujula</b>
+      <span class="small muted">Crocheted every panel, joined them, and added the edging</span>
+      <span class="status-ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5 12.5 10 17 19 7.5"/></svg>Confirmed in person, 21 Nov</span>
+    </div>
+    <div class="pay"><b>Unpaid</b><span class="small muted">made for herself</span></div>
+  </div>
+</section>
+
+<section class="pad">
+  <h2>What it cost to make</h2>
+  <p class="muted">This piece was never sold, so there is no retail price to split. This is what went into it.</p>
+  <div class="ledger">
+    <div class="row"><span>Yarn, order 1 · 11 Nov</span><span class="amt">₹538</span>
+      <span class="sub">2 packs, cream + navy · 400 g · incl. ₹25.60 GST</span></div>
+    <div class="row"><span>Yarn, order 2 · 15 Nov</span><span class="amt">₹269</span>
+      <span class="sub">1 pack, navy + black · 200 g · incl. ₹41.04 GST · only the navy ball was used</span></div>
+    <div class="row"><span>Hook and notions</span><span class="amt muted">not recorded</span></div>
+    <div class="row"><span>Maker's time</span><span class="amt">10 days</span>
+      <span class="sub">11–20 Nov 2026. Hours not logged.</span></div>
+    <div class="row total"><span>Materials bought</span><span class="amt">₹807</span></div>
+    <div class="row"><span>Left over, not in the cardigan</span><span class="amt muted">about −₹135</span>
+      <span class="sub">One 100 g black ball, half of the second pack</span></div>
+    <div class="row total"><span>Yarn in the cardigan</span><span class="amt">about ₹672</span>
+      <span class="sub">500 g: 2 balls cream, 3 balls navy</span></div>
+  </div>
+  <p class="small muted">Both invoices are held by the steward. Order numbers and the delivery address are never published.</p>
+</section>
+
+<section class="pad">
+  <h2>Its journey</h2>
+  <p class="note">Rujula numbered her progress photos 1 to 8 but didn't note the date of each. All eight were sent together on 19 Nov, so each shows a stage reached between 11 and 19 Nov.</p>
+  <div class="journey">
+    <div class="step"><div class="rail"><span class="dot"></span><span class="line"></span></div><div class="body">
+      <span class="when">11 NOV 2026</span><span class="title">Yarn ordered</span>
+      <span class="muted">Two 200 g packs of ProKart Micro Shine acrylic, cream and navy, from Amazon.in. Work started the same day.</span></div></div>
+    <div class="step"><div class="rail"><span class="dot"></span><span class="line"></span></div><div class="body">
+      <span class="when">15 NOV 2026</span><span class="title">More navy ordered</span>
+      <span class="muted">One more 200 g pack, navy and black, mid-way through the panels. Only the navy was used.</span></div></div>
+    <div id="stages" style="display:contents"></div>
+    <div class="step"><div class="rail"><span class="dot"></span><span class="line"></span></div><div class="body">
+      <span class="when">20 NOV 2026</span><span class="title">Finished</span>
+      <span class="muted">Ends woven in. The cardigan is complete.</span>
+      <span class="check edited"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>The photo at the top had its background replaced in an app. The cardigan itself is unchanged; photo 8 above shows it unedited.</span></div></div>
+  </div>
+</section>
+
+<section class="pad">
+  <h2>Materials</h2>
+  <div class="yarnbar" role="img" aria-label="Two colours: navy and cream"><span style="flex:1;background:var(--navy)"></span><span style="flex:1;background:var(--cream)"></span></div>
+  <dl class="facts">
+    <dt>Yarn</dt><dd>ProKart Micro Shine, 100 g balls</dd>
+    <dt>Fibre</dt><dd>Acrylic</dd>
+    <dt>Colours</dt><dd>Navy blue and cream</dd>
+    <dt>Used</dt><dd>500 g: 3 navy and 2 cream balls</dd>
+    <dt>Left over</dt><dd>1 black ball (100 g), unused</dd>
+    <dt>From</dt><dd>Amazon.in, two sellers in Mumbai</dd>
+    <dt>Stitches</dt><dd>Double crochet body, scalloped shell edging</dd>
+    <dt>Built as</dt><dd>Back, two fronts and two sleeves, made flat and joined</dd>
+  </dl>
+</section>
+
+<section class="pad integrity">
+  <div style="display:flex;align-items:center;gap:8px">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    <h2>This record is public and tamper-evident</h2>
+  </div>
+  <p class="muted">Each of the 17 entries carries the hash of the one before it, so changing any entry breaks every hash after it. Corrections are added as new entries and never overwrite old ones.</p>
+  <div class="hash"><span>Last entry: 21 Nov 2026, photos reviewed</span><span class="mono">Record 97ec 21cd … a109 a4dc</span></div>
+  <details>
+    <summary>View full history</summary>
+    <div class="log"><table>
+      <thead><tr><th>#</th><th>Date</th><th>Entry</th><th>Hash</th></tr></thead>
+      <tbody id="log"></tbody>
+    </table></div>
+  </details>
+</section>
+
+<footer class="pad">
+  <span>Rujula chose what is shown here. We show first names and districts only, and never addresses, phone numbers or ages.</span>
+  <span class="mark"><svg width="20" height="20" viewBox="0 0 216 214" aria-hidden="true"><rect x="8" y="8" width="200" height="198" fill="#FFFFFF" stroke="#000000" stroke-width="6"/><polygon points="108,72 40,174 176,174" fill="none" stroke="#0000FF" stroke-width="9"/><polygon points="108,40 38,140 178,140" fill="none" stroke="#FF9933" stroke-width="9"/></svg>Doublefree · doublefree.in</span>
+</footer>
+</div>
+
+<dialog id="zoom" aria-label="Photo">
+  <img id="zoomImg" alt="">
+  <button type="button" id="zoomClose">Close</button>
+</dialog>
+
+<script>
+const STAGES = [
+  ["Back panel","Worked flat in double crochet, three navy and two cream stripes.","ee511bdbc7ca33e61f3f0b5f67c2c47d0ffc37460ed8ba6aa4e15be9b81fcdfc","Finished back panel with navy and cream stripes"],
+  ["First front panel","Left front started, laid beside the back to line up the stripes.","f5bc56e558383c41317235b0291a656e393e1c2177a9627cc18c959eada962ae","Narrow front panel beside the wider back panel"],
+  ["Front edging and hem","Cream edge along the front and a scalloped hem.","f0ffd985920616c32e34271aba6fd59d6e5503e0130e13845845b6496bb95699","Back panel beside a front panel with cream edging and scalloped hem"],
+  ["Both fronts done","Both fronts laid out with the back before joining.","a8f2941b42146898acb55888b3576769cbf4a506fee9a4e7f7be4fb29c5e3e44","Back and both fronts laid out in one long piece with loose yarn ends"],
+  ["Body joined","Shoulders and sides joined. Front bands and the scalloped hem run all the way round.","8e903d7b08f39a8421b225503de5a170418be6bff1413738bda915d112db3182","Assembled cardigan body without sleeves"],
+  ["First sleeve","Cream sleeve worked and attached on one side.","e6620af5990efa56ba219f42f97dfed021a822c16b240cbf6bab27329ac16842","Cardigan body with one sleeve attached"],
+  ["Second sleeve","Second sleeve attached. Cuffs still plain.","c07c162ed6e206e62396b99c24cb4328666acde6585c1461ed073f3e26a5918d","Cardigan with both sleeves attached"],
+  ["Cuffs finished","Navy trim and scallops added to both cuffs.","0ecc9aca44aec20a5425ebe683b4f8eddb9f09baba2499e0472650e58516fc83","Finished cardigan with trimmed cuffs, sleeves folded across"]
+];
+const LOG = [
+  ["9 Nov","Passport opened (crochet, not for sale)","bfc3a36a…8453"],
+  ["11 Nov","Material: yarn order 1","7f0a5655…139e"],
+  ["15 Nov","Material: yarn order 2","4aa1474e…4861"],
+  ["19 Nov","Stage 1: back panel","84edab18…fe3a"],
+  ["19 Nov","Stage 2: first front panel","f1430c34…2db9"],
+  ["19 Nov","Stage 3: front edging and hem","c378863f…ee21"],
+  ["19 Nov","Stage 4: both fronts done","39c0b812…9df2"],
+  ["19 Nov","Stage 5: body joined","c7dd05ae…8d99"],
+  ["19 Nov","Stage 6: first sleeve","ef87471c…18d5"],
+  ["19 Nov","Stage 7: second sleeve","a00b8dc0…d742"],
+  ["19 Nov","Stage 8: cuffs finished","8d2386e2…b57d"],
+  ["20 Nov","Finished","96863413…90c8"],
+  ["21 Nov","Finished photo added (background edited)","3c458ae1…3a7d"],
+  ["21 Nov","Correction to entry 0001: started 11 Nov, not 9 Nov","4c6002fe…1ed8"],
+  ["21 Nov","Note on entry 0003: black ball unused, left over","955acaa4…8780"],
+  ["21 Nov","Maker confirmed role, pay and what is shown (in person)","3708a9c2…a8f3"],
+  ["21 Nov","Steward review: all 9 photos approved (present when taken)","97ec21cd…a4dc"]
+];
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("stages").innerHTML = STAGES.map(([t,d,sha,alt],i) => `
+  <div class="step"><div class="rail"><span class="dot hollow"></span><span class="line"></span></div><div class="body">
+    <span class="when">PHOTO ${i+1} OF 8 · SENT 19 NOV</span><span class="title">${esc(t)}</span>
+    <span class="muted">${esc(d)}</span>
+    <img src="../../thumbs/${sha}.jpg" data-full="../../media/${sha}.jpg" alt="${esc(alt)}" loading="lazy" decoding="async" data-zoom${i===7?' id="unedited"':''}>
+    <span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><polyline points="5 12.5 10 17 19 7.5"/></svg>Reviewed by steward, who was present when it was taken</span>
+  </div></div>`).join("");
+document.getElementById("log").innerHTML = LOG.map(([d,e,h],i) =>
+  `<tr><td class="mono">${String(i+1).padStart(4,"0")}</td><td>${d}</td><td>${esc(e)}</td><td class="mono">${h}</td></tr>`).join("");
+
+const dlg = document.getElementById("zoom"), zi = document.getElementById("zoomImg");
+document.addEventListener("click", e => {
+  const img = e.target.closest("img[data-zoom]");
+  if (!img || typeof dlg.showModal !== "function") return;
+  zi.src = img.dataset.full || img.currentSrc || img.src; zi.alt = img.alt; dlg.showModal();
+});
+document.getElementById("zoomClose").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+</script>
+</body>
+</html>

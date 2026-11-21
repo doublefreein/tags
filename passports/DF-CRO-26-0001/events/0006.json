@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0006",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-19T10:35:00+05:30",
+  "submitted_by": "P-0001",
+  "channel": "whatsapp",
+  "payload": {
+    "stage": "front-left",
+    "seq": 3,
+    "title": "Front edging and hem",
+    "detail": "Left front finished with a cream edge and a scalloped hem.",
+    "media": [
+      "f0ffd985920616c32e34271aba6fd59d6e5503e0130e13845845b6496bb95699"
+    ],
+    "maker": "P-0001",
+    "taken": "between 9 and 19 Nov 2026 (exact date not recorded)",
+    "checks": {
+      "V1_one_time_code": "absent: photo taken before a code was issued",
+      "V2_reuse": "not run",
+      "V3_ai": "not run",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "f1430c34a37534c1f34b757423d017a3183dbb3b6d3fcc00248013062a502db9"
+}

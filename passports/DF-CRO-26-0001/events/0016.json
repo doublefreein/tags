@@ -1,0 +1,21 @@
+{
+  "event_id": "DF-CRO-26-0001/0016",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "confirmation",
+  "timestamp": "2026-11-21T14:00:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "in-person",
+  "payload": {
+    "maker": "P-0001",
+    "role": "Crocheted every panel, joined them, added the edging",
+    "pay": "unpaid: made for herself",
+    "display": {
+      "name": "first name only",
+      "place": "district only"
+    },
+    "method": "in person, recorded by steward",
+    "evidence": "consent record held in private store"
+  },
+  "supersedes": null,
+  "prev_hash": "955acaa415ae674d0bd5584e7616a09ad76c78969018d871cc69f81a7bc58780"
+}

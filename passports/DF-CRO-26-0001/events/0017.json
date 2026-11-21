@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0017",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "review",
+  "timestamp": "2026-11-21T14:15:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "reviews": [
+      "DF-CRO-26-0001/0004",
+      "DF-CRO-26-0001/0005",
+      "DF-CRO-26-0001/0006",
+      "DF-CRO-26-0001/0007",
+      "DF-CRO-26-0001/0008",
+      "DF-CRO-26-0001/0009",
+      "DF-CRO-26-0001/0010",
+      "DF-CRO-26-0001/0011",
+      "DF-CRO-26-0001/0013"
+    ],
+    "decision": "approved",
+    "basis": "reviewer was present when the photos were taken",
+    "automated_checks": "not run",
+    "note": "Reviewer is a family member of the maker (sample passport)."
+  },
+  "supersedes": null,
+  "prev_hash": "3708a9c227d4e7d45d3a109040d4a7b4cacea0669b4118b8a84ab15bb2e8a8f3"
+}

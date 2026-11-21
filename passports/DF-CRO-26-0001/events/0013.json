@@ -1,0 +1,23 @@
+{
+  "event_id": "DF-CRO-26-0001/0013",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-21T12:30:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "stage": "finished",
+    "title": "Finished photo added",
+    "media": [
+      "76461b794c0bf0586b3dfb00272904a2615e629bfd6125d8ec5b894bef848be6"
+    ],
+    "edited": true,
+    "edit_note": "Background replaced in a photo-editing app. The sweater itself was not altered (stated by the maker's family).",
+    "checks": {
+      "V1_one_time_code": "absent",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "96863413dac1e7d63ffc599282db7995c29df789d3636dc2a506bd341ab290c8"
+}

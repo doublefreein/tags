@@ -1,0 +1,16 @@
+{
+  "event_id": "DF-CRO-26-0001/0014",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "correction",
+  "timestamp": "2026-11-21T13:30:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "field": "started_on",
+    "old": "2026-11-09",
+    "new": "2026-11-11",
+    "reason": "The first yarn order is dated 11 Nov 2026, so work could not have started on 9 Nov. Confirmed by the maker's family."
+  },
+  "supersedes": "DF-CRO-26-0001/0001",
+  "prev_hash": "3c458ae18bbf380ba85fb5a6a86ad230d250d5ae7c71e0316390f1a6cc5e3a7d"
+}

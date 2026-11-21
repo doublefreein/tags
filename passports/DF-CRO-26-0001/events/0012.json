@@ -1,0 +1,17 @@
+{
+  "event_id": "DF-CRO-26-0001/0012",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-20T18:00:00+05:30",
+  "submitted_by": "P-STEWARD-DEMO",
+  "channel": "steward",
+  "payload": {
+    "stage": "finished",
+    "title": "Finished",
+    "detail": "Ends woven in; cardigan complete.",
+    "maker": "P-0001",
+    "media": []
+  },
+  "supersedes": null,
+  "prev_hash": "8d2386e206aa78e4c7c9c47d38c9542a11ee9bd3918913e509976b988df3b57d"
+}

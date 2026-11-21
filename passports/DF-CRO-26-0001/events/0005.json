@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0005",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-19T10:35:00+05:30",
+  "submitted_by": "P-0001",
+  "channel": "whatsapp",
+  "payload": {
+    "stage": "front-left",
+    "seq": 2,
+    "title": "First front panel",
+    "detail": "Left front started, laid beside the back to match the stripes.",
+    "media": [
+      "f5bc56e558383c41317235b0291a656e393e1c2177a9627cc18c959eada962ae"
+    ],
+    "maker": "P-0001",
+    "taken": "between 9 and 19 Nov 2026 (exact date not recorded)",
+    "checks": {
+      "V1_one_time_code": "absent: photo taken before a code was issued",
+      "V2_reuse": "not run",
+      "V3_ai": "not run",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "84edab1851a5aed8fd23c9dfba41eeca378863688460d0bb956533cc4619fe3a"
+}

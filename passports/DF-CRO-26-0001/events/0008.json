@@ -1,0 +1,27 @@
+{
+  "event_id": "DF-CRO-26-0001/0008",
+  "passport_id": "DF-CRO-26-0001",
+  "type": "stage",
+  "timestamp": "2026-11-19T10:35:00+05:30",
+  "submitted_by": "P-0001",
+  "channel": "whatsapp",
+  "payload": {
+    "stage": "assembly",
+    "seq": 5,
+    "title": "Body joined",
+    "detail": "Shoulders and sides joined; front bands and scalloped hem run across.",
+    "media": [
+      "8e903d7b08f39a8421b225503de5a170418be6bff1413738bda915d112db3182"
+    ],
+    "maker": "P-0001",
+    "taken": "between 9 and 19 Nov 2026 (exact date not recorded)",
+    "checks": {
+      "V1_one_time_code": "absent: photo taken before a code was issued",
+      "V2_reuse": "not run",
+      "V3_ai": "not run",
+      "route": "steward review"
+    }
+  },
+  "supersedes": null,
+  "prev_hash": "39c0b8123ecc53197912b90bacafd07af6136a9231fec783e55b1fd9cf9a9df2"
+}
