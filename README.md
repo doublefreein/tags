@@ -28,6 +28,27 @@ matches its hash. It needs only Python 3, with no account.
 Corrections never rewrite an entry. They are added as new entries that point
 to the one they replace.
 
+## Keeping tag addresses working
+
+Every printed tag points to `doublefree.in/tags/<ID>`, so that address must
+never change. It works because GitHub Pages serves this repository under
+the custom domain of the account's main site, `doublefreein.github.io`
+(whose `CNAME` is `doublefree.in`). This repository has no domain settings
+of its own.
+
+- **Never rename this repository.** The name `tags` is the `/tags/` in every
+  printed address. Renaming it breaks every tag in circulation.
+- **Never add a `CNAME` file here.** It would replace the inherited
+  `doublefree.in/tags/` address.
+- **The main site must keep `doublefree.in` as its custom domain.** If that
+  changes, every passport moves with it.
+- **Nothing else on doublefree.in may use `/tags/`.** This repository hides
+  any page at that path on the main site. The blog's tag archive lives at
+  `/blog/tags/` for this reason.
+- **Mirrors don't inherit this.** A Codeberg or self-hosted copy needs its
+  own setup to serve the same `/tags/<ID>` paths before DNS can be pointed
+  at it.
+
 ## Passports
 
 - [DF-CRO-26-0001](DF-CRO-26-0001/): striped crochet cardigan, Pune (sample)
